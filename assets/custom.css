@@ -1,0 +1,134 @@
+/* CUSTOM FONT */
+* {
+  font-family: 'Gill Sans', sans-serif;
+  /* background-color: coral; */
+}
+
+/* ******CUSTOM Container ******** */
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1800px;
+  }
+}
+/* ******CUSTOM Main Container ******** */
+.rlv-main-container {
+  margin-top: 2%;
+}
+/* ******CUSTOM nav ******** */
+.rlv-logo {
+  width: 95px;
+  height: auto;
+  margin-top: 55px;
+  z-index: 9999;
+}
+
+@media (max-width: 1199px) {
+  .rlv-logo {
+    width: 95px;
+    height: auto;
+    margin-top: 55px;
+    z-index: 9999;
+  }
+}
+
+@media (max-width: 991px) {
+  .rlv-logo {
+    width: 75px;
+    height: auto;
+    margin-top: 55px;
+    z-index: 9999;
+  }
+}
+
+@media (max-width: 767px) {
+  .rlv-logo {
+    width: 55px;
+    height: auto;
+    margin-top: 0px;
+  }
+}
+
+.RLV-nav-bar {
+  background-color: #001a31 !important;
+  font-size: 1.5rem;
+  height: 60px;
+}
+
+@media (max-width: 767px) {
+  .RLV-nav-bar {
+    background-color: #001a31 !important;
+    font-size: 1.3rem;
+    height: 80px;
+  }
+}
+
+.RLV-navbar-item {
+  padding-left: 1.5rem !important;
+}
+@media (max-width: 767px) {
+  .RLV-navbar-item {
+    padding-left: 1.2rem !important;
+  }
+}
+@media (max-width: 767px) {
+  .rlv-nav_collapse {
+    background-color: #001a31be !important;
+  }
+}
+/* ******CUSTOM home ******** */
+.rlv-img-claim {
+  margin-top: 35%;
+}
+@media (max-width: 991px) {
+  .rlv-img-claim {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .rlv-img-claim {
+    margin-top: 0px;
+  }
+}
+/* *********CUSTOM index****** */
+.rlv-zindex {
+  z-index: -1;
+}
+
+/* ******CUSTOM slider******* */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+ol {
+  margin-bottom: 0.2rem !important;
+}
+.carousel-indicators li {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin: 0 10px;
+}
+
+@media (max-width: 991px) {
+  .carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin: 0 10px;
+  }
+}
