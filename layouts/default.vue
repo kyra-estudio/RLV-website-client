@@ -1,13 +1,13 @@
 <template>
   <div class="RLV-layout-default">
-    <v-app>
+    
       <RLVNavBar />
-      <v-main>
-        <v-container>
+      <main>
+        <!-- <b-container> -->
           <Nuxt />
-        </v-container>
-      </v-main>
-    </v-app>
+        <!-- </b-container> -->
+      </main>
+   
   </div>
 </template>
 

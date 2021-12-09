@@ -11,25 +11,36 @@
       <b-row class="mt-4 row justify-content-center">
         <b-col sm="10">
           <b-form-input
+           v-model="name"
             id="name"
             type="text"
-            
-            placeholder="Nombre y Apellidos"
+            placeholder="Nombre"
             required
           ></b-form-input>
         </b-col>
       </b-row>
       <b-row class="mt-4 row justify-content-center">
         <b-col sm="10">
-          <b-form-file placeholder="Fotografía" required></b-form-file>
+          <b-form-input
+           v-model="lastname"
+            id="lastname"
+            type="text"
+            placeholder="Apellidos"
+            required
+          ></b-form-input>
+        </b-col>
+      </b-row>
+      <b-row class="mt-4 row justify-content-center">
+        <b-col sm="10">
+          <b-form-file  v-model="avatar" placeholder="Fotografía" required ></b-form-file>
         </b-col>
       </b-row>
       <b-row class="mt-4 row justify-content-center">
         <b-col sm="10">
           <b-form-input
-            id="name"
+            v-model="email"
+            id="email"
             type="email"
-            
             placeholder="e-mail"
             required
           ></b-form-input>
@@ -38,9 +49,9 @@
       <b-row class="mt-4 row justify-content-center">
         <b-col sm="10">
           <b-form-input
+           v-model="password"
             id="password"
             type="password"
-            
             placeholder="Contraseña"
             required
           ></b-form-input>
@@ -49,15 +60,15 @@
       <b-row class="mt-4 row justify-content-center">
         <b-col sm="10">
           <b-form-input
+           v-model="password2"
             id="password2"
             type="password"
-            
             placeholder="Repita contraseña"
             required
           ></b-form-input>
         </b-col>
       </b-row>
-      <b-row class="rlv-checkbox mt-1 ">
+      <!-- <b-row class="rlv-checkbox mt-1">
         <b-form-checkbox
           id="checkbox-1"
           v-model="status"
@@ -67,10 +78,12 @@
         >
           Acepto los términos y condiciones
         </b-form-checkbox>
-      </b-row>
+      </b-row> -->
 
       <b-row class="mt-4 row justify-content-center">
-        <b-button class="rlv-btn-form" size="lg">Registrar </b-button>
+        <b-button class="rlv-btn-form" size="lg" @click="onSubmit"
+          >Registrar
+        </b-button>
       </b-row>
     </b-container>
   </div>
@@ -81,12 +94,13 @@ export default {
   data() {
     return {
       name: '',
+      lastname:"",
       avatar: undefined,
       valid: true,
       password: '',
       password2: '',
       email: '',
-      status: 'not_accepted',
+      // status: 'not_accepted',
     }
   },
   methods: {
@@ -97,9 +111,12 @@ export default {
       }
       const formData = new FormData()
       formData.enctype = 'multipart/form-data'
+      formData.append("name", this.name)
+      formData.append("lastname", this.lastname)
       formData.append('avatar', this.avatar)
       formData.append('email', this.email)
       formData.append('password', this.password)
+      formData.append('password2', this.password2)
       try {
         const res = await fetch('http://localhost:4500/api/user/signUp', {
           method: 'POST',

@@ -58,7 +58,6 @@
   .RLV-nav-bar {
     background-color: #001a31 !important;
     font-size: 1rem;
-    
   }
 }
 
@@ -81,8 +80,51 @@
 @media (max-width: 767px) {
   .rlv-nav_collapse {
     background-color: #001a31be !important;
+    z-index: 999;
   }
 }
+.rlv-avatar {
+  margin-top: -36px;
+}
+@media (max-width: 991px) {
+  .rlv-avatar {
+    margin-top: -25px;
+  }
+}
+
+#rlv-avatar a {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dropdown-item {
+  color: #001a31be !important;
+}
+.carousel-inner {
+  z-index: -1;
+}
+
+.rlv-subnav{
+  margin-left: 14%;
+  z-index: 999;
+  }
+
+ .active{
+    text-decoration: underline !important;  
+    font-weight: 600 !important
+   }
+  
+ .rlv-subnav-item{
+z-index: 9999 !important;
+  }
+ .rlv-subnav-item a {
+   color: #001a31be !important;
+   font-size: 1.3rem;
+   font-weight: 400;
+   z-index: 999;
+   
+ } 
+ .rlv-subnav-item:hover {
+  cursor: pointer;
+ } 
 /* ******CUSTOM home ******** */
 .rlv-img-claim {
   margin-top: 35%;
@@ -100,7 +142,7 @@
 }
 /* *********CUSTOM index****** */
 .rlv-zindex {
-  z-index:-1;
+  z-index: -1;
 }
 
 /* ******CUSTOM slider******* */
@@ -157,10 +199,10 @@ ol {
 @media (max-width: 1599px) {
   .rlv-subclaim-text {
     font-size: 22px;
-  width: 50%;
-  float: left;
-  margin-top: 15%;
-  margin-left: -14%;
+    width: 50%;
+    float: left;
+    margin-top: 15%;
+    margin-left: -14%;
   }
 }
 @media (max-width: 991px) {
@@ -202,17 +244,17 @@ ol {
     margin-left: -11%;
   }
 }
-.rlv-btn-inicio{
+.rlv-btn-inicio {
   margin-top: 15%;
 }
 @media (max-width: 991px) {
-  .rlv-btn-inicio{
+  .rlv-btn-inicio {
     margin-top: 0px !important;
   }
 }
 @media (max-width: 767px) {
-  .rlv-btn-inicio{
-    margin-top:0px;
+  .rlv-btn-inicio {
+    margin-top: 0px;
   }
 }
 .btn-rutas {
@@ -220,13 +262,145 @@ ol {
   border: 0;
 }
 /* ****** CUMTOM page-sign-up ****** */
-.rlv-logo-sign-up{
+.rlv-logo-sign-up {
   margin-top: 15%;
   text-align: center;
 }
-.rlv-btn-form{
+.rlv-btn-form {
   background-color: #001a31;
 }
-.rlv-checkbox{
+.rlv-checkbox {
   margin-left: 9%;
+}
+.rlv-logo-sign-in {
+  margin-top: 20%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+/* ******custom page-rutas*********** */
+
+.rlv-rutas-tittle {
+  margin: 2% 5%;
+}
+.rlv-rutas-text {
+  font-family: 'Amalfi Coast', sans-serif;
+  display: inline;
+}
+.rlv-card {
+  border: none;
+}
+
+
+.card-body {
+  padding: 0;
+}
+
+.card-img, .card-img-top:hover {
+  cursor: pointer;
+}
+.rlv-ruta-detalle{
+  margin-top: 4%;
+}
+/**** boton detalles ***/
+.button {
+  margin : 0 auto;
+  margin-top : 10px;
+  width : auto;
+  height : 50px;
+  background : #001a31;
+  overflow : hidden;
+  text-align : center;
+  transition : .2s;
+  cursor : pointer;
+  border-radius : 5px;
+}
+.hover {
+  position : relative;
+  border : 2px solid white;
+  width : 230px;
+  height : 200px;
+  margin-top: -110px;
+  background : #34475E;
+  left : -255px;
+  transition : .3s;
+  transform : rotate(20deg);
+  opacity : .8;
+}
+.clic {
+  color : white;
+  transition : .3s;
+  font-size: 1.3rem;
+  padding-top: 10px;
+}
+.button:hover .hover{
+  left: -145px;
+}
+.button:hover .clic{
+  margin-left : 80px;
+}
+.sure {
+  margin-top : 37px;
+  margin-right : -135px;
+  color : white;
+  transform : rotate(-20deg);
+  font-size: 1.3rem;
+}
+.button:active {
+  box-shadow: 2px 2px 1px #888888;
+}
+/********zoom**************/
+.overlay,
+.overlay-text,
+.simple-text,
+.overlay-sim-text-2,
+.overlay-text-effect-3,
+.zoom-effect-1 img,
+.zoom-effect-2 img,
+.opacity-effect img,
+.blur-effect img,
+.grayscale-effect img{
+ transition: all .4s linear;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -o-transition: all .4s linear;
+}
+.image-wrapper{
+margin-bottom: 35px;
+}
+.effect-image-1{
+position: relative;
+display: block;
+}
+.overlay-text p,
+.overlay-sim-text-2 p,
+.overlay-text-effect-3 p{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  padding: 20px 20px;
+}
+.overlay{
+position: absolute;
+display: block;
+width: 100%;
+height: 100%;
+left:0;
+top:0;
+background: rgba(246,0,2,.7);
+opacity: 0;
+visibility: hidden;
+}
+.zoom-effect-1{
+  overflow: hidden;
+}
+
+.zoom-effect-1 img{
+  transform: scale(1);
+  -webkit-transform: scale(1);
+}
+
+.zoom-effect-1:hover img{
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }

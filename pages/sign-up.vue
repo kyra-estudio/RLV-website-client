@@ -12,3 +12,34 @@
         </b-row>
     </div>
 </template>
+
+<script>
+export default {
+  
+  data() {
+    return {
+      isValid: true,
+    }
+  },
+  asyncData(ctx) {
+    if (ctx?.store?.state?.user?.token && ctx?.store?.state?.user?.token != 'undefined') {
+      ctx.redirect('/home')
+    }
+  },
+  created() {
+    if (process.client) {
+      const token = localStorage.getItem('token')
+      if (token) {
+        this.$router.push('/home')
+      } else {
+        // this.isValid = true
+      }
+    }
+  },
+  computed: {
+    token() {
+      return this.$store.state.user.token
+    },
+  },
+}
+</script>

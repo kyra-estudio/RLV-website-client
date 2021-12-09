@@ -1,6 +1,6 @@
 <template>
   <div class="RLV-home">
-    <b-main>
+    <main>
       <b-container class="rlv-main-container">
         <b-row>
           <b-col cols="lg-6">
@@ -43,7 +43,7 @@
           </b-col>
         </b-row>
       </b-container>
-    </b-main>
+    </main>
   </div>
 </template>
 <style scoped></style>
