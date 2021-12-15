@@ -3,7 +3,7 @@
     <b-navbar toggleable="md" type="dark" variant="info" class="RLV-nav-bar">
       <b-container class="RLV-bar-container">
         <b-navbar-toggle target="nav_collapse"> </b-navbar-toggle>
-        <b-navbar-brand href="./home"
+        <b-navbar-brand @click="goHome()"
           ><b-img
             :src="require('../static/img/logo/logo-navbar.png')"
             fluid
