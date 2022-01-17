@@ -21,7 +21,7 @@
               >Rutas</b-nav-item
             >
             <b-nav-item
-             @click="goActividades()"
+              @click="goActividades()"
               class="RLV-navbar-item"
               v-if="noHome"
               >Actividades</b-nav-item
@@ -32,14 +32,13 @@
               v-if="noHome && token"
               >CursosPro</b-nav-item
             >
-             <b-nav-item href="./sign-in" class="RLV-navbar-item" v-if="!token"
+            <b-nav-item href="./sign-in" class="RLV-navbar-item" v-if="!token"
               >Ingresar</b-nav-item
             >
             <b-nav-item href="./sign-up" class="RLV-navbar-item" v-if="!token"
               >Registro</b-nav-item
             >
           </b-navbar-nav>
-          
         </b-collapse>
       </b-container>
       <b-nav-item-dropdown
@@ -65,10 +64,10 @@ export default {
     return {
       token: '',
       avatar: undefined,
-      name:'',
+      name: '',
     }
   },
-  created() {
+  mounted() {
     if (process.client) {
       this.token = localStorage.getItem('token')
       this.avatar = localStorage.getItem('avatar')

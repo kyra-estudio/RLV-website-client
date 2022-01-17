@@ -600,3 +600,225 @@ ol {
   background-image:  url("./static/img/logo/logo-marca-cursos.png");
   background-repeat: no-repeat;
 }
+.img-actividades{
+  position: relative;
+}
+.rlv-btn-actividades-pst{
+  position: absolute;
+  margin-top: 231px;
+}
+.rlv-btn-actividades{
+  /* padding: 7rem 7rem; */
+  background: #001a31;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 235px;
+  height: 235px;
+}
+.rlv-btn-actividades::before{
+  content: "Plazas libres";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: white;
+  /* font-weight: 700;
+  text-shadow: .1rem .1rem .1rem #333; */
+  transition: .5s ease;
+  font-family: 'Amalfi Coast', sans-serif ;
+}
+.rlv-btn-actividades::after{
+  content: "Regístrate";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 1.6rem;
+  color: white;
+  /* font-weight: 700;
+  text-shadow: .1rem .1rem .1rem #333; */
+  transition: .5s ease;
+  font-family: 'Amalfi Coast', sans-serif;
+  opacity:0;
+}
+.rlv-btn-actividades:hover::before{
+  transform:  translate(-200%, -200%) scale(2);
+  opacity: 1;
+}
+.rlv-btn-actividades:hover::after{
+  transform:  translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.rlv-btn-actividades-reg-pst{
+  position: absolute;
+  margin-top: 231px;
+}
+.rlv-btn-actividades-reg{
+  /* padding: 7rem 7rem; */
+  background: #001a31;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 235px;
+  height: 235px;
+}
+.rlv-btn-actividades-reg::before{
+  content: "Plazas libres";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: white;
+  /* font-weight: 700;
+  text-shadow: .1rem .1rem .1rem #333; */
+  transition: .5s ease;
+  font-family: 'Amalfi Coast', sans-serif ;
+}
+.rlv-btn-actividades-reg::after{
+  content: "+ Info";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 1.6rem;
+  color: white;
+  /* font-weight: 700;
+  text-shadow: .1rem .1rem .1rem #333; */
+  transition: .5s ease;
+  font-family: 'Amalfi Coast', sans-serif;
+  opacity:0;
+}
+.rlv-btn-actividades-reg:hover::before{
+  transform:  translate(-200%, -200%) scale(2);
+  opacity: 1;
+}
+.rlv-btn-actividades-reg:hover::after{
+  transform:  translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+/* ******custom page-cursosPRO*********** */
+
+.rlv-cursospro-titulo{
+  margin-top: -4.5%;
+  margin-left: 17%;
+}
+.rlv-cursospro-text{
+  margin-left: 25%;
+    margin-top: -5%;
+    margin-right: 10%;
+    font-size: 28px;    
+}
+
+.rlv-cursospro-iconos{
+  position: relative;
+  width: 385px;
+  height: 385px;
+  margin-top: 5%;
+  
+}
+.rlv-cursospro-i-escalada{
+  position: absolute;
+  cursor: pointer;
+}
+.rlv-cursospro-i-rafting{
+  position: absolute;
+  margin-left: 52%;
+  cursor: pointer;
+}
+.rlv-cursospro-separador{
+  position: absolute;
+  z-index: -1;
+}
+.rlv-cursospro-i-parapente{
+  position: absolute;
+  margin-top: 52%;
+  cursor: pointer;
+}
+.rlv-cursospro-i-barranquismo{
+  position: absolute;
+  margin-left: 52%;
+  margin-top: 52%;
+  cursor: pointer;
+}
+
+.rlv-escalada-titulo{
+ 
+  margin-left: 17%;
+}
+.rlv-escalada-text{
+ margin-top:5%;
+    font-size: 22px;    
+}
+.rlv-btn-cursospro-reg-pst{
+  position: absolute;
+ 
+  ;
+}
+.rlv-btn-cursospro-reg{
+  /* padding: 7rem 7rem; */
+  background: #001a31;
+  border: 5px solid white;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 235px;
+  height: 235px;
+  margin-top: -40%;
+}
+
+.rlv-btn-cursospro-reg::before{
+  content: "Plazas libres";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: white;
+  /* font-weight: 700;
+  text-shadow: .1rem .1rem .1rem #333; */
+  transition: .5s ease;
+  font-family: 'Amalfi Coast', sans-serif ;
+}
+.rlv-btn-cursospro-reg::after{
+  content: "+ Info";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 1.6rem;
+  color: white;
+  /* font-weight: 700;
+  text-shadow: .1rem .1rem .1rem #333; */
+  transition: .5s ease;
+  font-family: 'Amalfi Coast', sans-serif;
+  opacity:0;
+}
+.rlv-btn-cursospro-reg:hover::before{
+  transform:  translate(-200%, -200%) scale(2);
+  opacity: 1;
+}
+.rlv-btn-cursospro-reg:hover::after{
+  transform:  translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.rlv-escalda-imgright{
+  position: relative;
+}
+
+.rlv-escalada-escalada2{
+  
+  margin-top: 15%;
+  text-align: right;
+}
+
+.rlv-escalada-escalada3{
+  /* position: absolute; */
+  margin-top: 60%;
+  margin-left: -20%;
+}

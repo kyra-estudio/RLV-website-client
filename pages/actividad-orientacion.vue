@@ -50,10 +50,16 @@
         </b-col>
         <b-col cols="12" md="12" lg="6">
           <div class="img-actividades d-flex justify-content-center">
+            
             <b-img
               :src="require('../static/img/actividades/orientacion.png')"
               fluid
             ></b-img>
+            <div class="rlv-btn-actividades-pst">
+              <div class="rlv-btn-actividades" @click="onSignUp()" v-if="!token"></div>
+              <div class="rlv-btn-actividades-reg" @click="onSignUp()" v-if="token"></div>
+            </div>
+            
           </div>
         </b-col>
       </b-row>
@@ -62,6 +68,23 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      token: '',     
+    }
+  },
+  created() {
+    if (process.client) {
+      this.token = localStorage.getItem('token')
+    }
+  },
+  watch: {
+    '$store.state.user.token'(value) {
+      if (value) {
+        this.token = localStorage.getItem('token')
+      }
+    },
+  },
   methods: {
     onOrientacion() {
       this.$router.push('/actividad-orientacion')
@@ -74,6 +97,9 @@ export default {
     },
     onMicologia() {
       this.$router.push('/actividad-micologia')
+    },
+    onSignUp() {
+      this.$router.push('/sign-up')
     },
   },
 }

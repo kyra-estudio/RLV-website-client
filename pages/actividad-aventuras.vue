@@ -5,7 +5,7 @@
         <b-nav-item @click="onOrientacion()" class="rlv-subnav-item" 
           >Curso Orientación</b-nav-item
         >
-        <b-nav-item  @click="onSenderismo()" class="rlv-subnav-item"
+        <b-nav-item @click="onSenderismo()" class="rlv-subnav-item"
           >Senderismo</b-nav-item
         >
         <b-nav-item @click="onAventuras()" class="rlv-subnav-item" active
@@ -13,13 +13,72 @@
         </b-nav-item>
         <b-nav-item @click="onMicologia()" class="rlv-subnav-item"
           >Curso de Micología
-        </b-nav-item>        
+        </b-nav-item>
       </b-nav>
     </div>
+    <b-container class="rlv-cursos-container mt-5">
+      <b-row>
+        <b-col cols="12" md="12" lg="6">
+          <b-row>
+            <b-col cols="3"></b-col>
+            <b-col cols="3">
+              <div class="img-actividades text-right">
+                <b-img
+                  :src="require('../static/img/iconos/i-aventuras.png')"
+                  fluid
+                ></b-img>
+              </div>
+            </b-col>
+            <b-col cols="4">
+              <h1 class="rlv-title-cursos">Aventuras</h1>
+              <p class="rlv-text-cursos">
+                Apuntarse a las actividades implica la aceptación de las
+                condiciones y normas de funcionamiento del club.
+              </p>
+              <p class="rlv-text-cursos">
+                El Parque Nacional de los Picos de Europa es, probablemente el parque nacional más impresionante de España, o incluso de Europa y, sin lugar a duda, un imán para los montañistas.
+              </p>              
+            </b-col>
+            <b-col cols="2"></b-col>
+          </b-row>
+        </b-col>
+        <b-col cols="12" md="12" lg="6">
+          <div class="img-actividades d-flex justify-content-center">
+            
+            <b-img
+              :src="require('../static/img/actividades/aventuras.png')"
+              fluid
+            ></b-img>
+            <div class="rlv-btn-actividades-pst">
+              <div class="rlv-btn-actividades" @click="onSignUp()" v-if="!token"></div>
+              <div class="rlv-btn-actividades-reg" @click="onSignUp()" v-if="token"></div>
+            </div>
+            
+          </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      token: '',     
+    }
+  },
+  created() {
+    if (process.client) {
+      this.token = localStorage.getItem('token')
+    }
+  },
+  watch: {
+    '$store.state.user.token'(value) {
+      if (value) {
+        this.token = localStorage.getItem('token')
+      }
+    },
+  },
   methods: {
     onOrientacion() {
       this.$router.push('/actividad-orientacion')
@@ -33,7 +92,9 @@ export default {
     onMicologia() {
       this.$router.push('/actividad-micologia')
     },
-    
-  }
+    onSignUp() {
+      this.$router.push('/sign-up')
+    },
+  },
 }
 </script>
