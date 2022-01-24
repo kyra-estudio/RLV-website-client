@@ -31,18 +31,21 @@
         </b-col>
         <b-col cols="12" md="12" lg="4">
           <div class="text-rutas-detalle">
-            <h1>Ruta de los carneros salvajes</h1>
+            <h1>{{ title }}</h1>
             <b-img
               :src="require('../static/img/iconos/incluye.png')"
               fluid
             ></b-img>
-            <div class="button">
+            <div class="button" v-if="!token">
               <p class="clic">Reserva tu plan desde 200€</p>
-              <div class="hover">
-                <p class="sure" @click="goSignUp()" v-if="!token">
-                  Regístrate!
-                </p>
-                <p class="sure" @click="goSignUp()" v-if="token">+ info!</p>
+              <div class="rlv-btn-rutas">
+                <p class="rlv-sure" @click="goSignUp()">Regístrate!</p>
+              </div>
+            </div>
+            <div class="button" v-else>
+              <p class="clic">Reserva tu plan desde 200€</p>
+              <div class="rlv-btn-rutas">
+                <p class="rlv-sure" @click="onForm()">+ info!</p>
               </div>
             </div>
             <h2>
@@ -198,17 +201,22 @@
   </div>
 </template>
 <script>
+import config from '~/config'
 export default {
   data() {
     return {
       token: '',
       currdeg: 0,
+      title: '',
     }
   },
   created() {
     if (process.client) {
       this.token = localStorage.getItem('token')
     }
+  },
+  beforeMount() {
+    this.loadActivity()
   },
   computed: {
     style() {
@@ -224,6 +232,23 @@ export default {
   },
 
   methods: {
+    async loadActivity() {
+      try {
+        const res = await fetch('http://localhost:4500/api/activity/getAll', {
+          method: 'GET',
+        })
+        const data = await res.json()
+        for (let i = 0; i < data.activity.length; i++) {
+          if (data.activity[i].title === config.rutaCarnerosName) {
+            this.title = data.activity[i].title
+            localStorage.setItem('activityId', data.activity[i]._id)
+            localStorage.setItem('activityName', data.activity[i].title)
+          }
+        }
+      } catch (err) {
+        alert(err.message)
+      }
+    },
     onCarneros() {
       this.$router.push('/ruta-carneros')
     },
@@ -249,6 +274,9 @@ export default {
       if (action == 'p') {
         this.currdeg = this.currdeg + 60
       }
+    },
+    onForm() {
+      this.$router.push('/formulario-actividades')
     },
   },
 }

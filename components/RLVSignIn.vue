@@ -78,6 +78,7 @@ export default {
         }
         localStorage.setItem('name', data.name)
         localStorage.setItem('avatar', data.avatar)
+        localStorage.setItem('userId', data.id)
         this.$store.dispatch('user/saveToken', data.token)
 
         this.$router.push('/inicio')

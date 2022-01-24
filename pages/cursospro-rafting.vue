@@ -1,8 +1,8 @@
 <template>
-<div class="rlv-cpro-rafting">
+  <div class="rlv-cpro-rafting">
     <div class="rlv-subnav">
       <b-nav>
-        <b-nav-item @click="onEscalada()" class="rlv-subnav-item" 
+        <b-nav-item @click="onEscalada()" class="rlv-subnav-item"
           >Escalada</b-nav-item
         >
         <b-nav-item @click="onRafting()" class="rlv-subnav-item" active
@@ -39,16 +39,20 @@
           </b-col>
           <b-col lg="2">
             <div class="rlv-btn-cursospro-pst">
-              <div class="rlv-btn-cursospro-reg" @click="onSignUp()"></div>
+              <div class="rlv-btn-cursospro-reg" @click="onForm()"></div>
             </div>
           </b-col>
           <b-col lg="5">
             <div>
               <p class="rlv-escalada-text">
-                Obtener los conocimientos necesarios para poder desarrollar la actividad de rafting, asi como tecnicas de rescate.
+                Obtener los conocimientos necesarios para poder desarrollar la
+                actividad de rafting, asi como tecnicas de rescate.
               </p>
               <p class="rlv-escalada-text">
-                El curso de rafting es un curso totalmente practica donde además de realizar la actividad, se aprenderan técnicas de rescate, tecnicas de salvamento y otras tecnicas fundamentales para poder realizar la actividad con seguridad.
+                El curso de rafting es un curso totalmente practica donde además
+                de realizar la actividad, se aprenderan técnicas de rescate,
+                tecnicas de salvamento y otras tecnicas fundamentales para poder
+                realizar la actividad con seguridad.
               </p>
             </div>
           </b-col>
@@ -61,7 +65,7 @@
           :src="require('../static/img/cursospro/rafting1.png')"
           fluid
         ></b-img>
-      </b-col>           
+      </b-col>
     </b-row>
     <b-row class="mt-3">
       <b-col lg="12">
@@ -69,21 +73,32 @@
           :src="require('../static/img/cursospro/rafting2.png')"
           fluid
         ></b-img>
-      </b-col>           
+      </b-col>
     </b-row>
   </div>
 </template>
 <script>
+import config from '~/config'
 export default {
   data() {
     return {
       token: '',
+      currdeg: 0,
+      title: '',
     }
   },
   created() {
     if (process.client) {
       this.token = localStorage.getItem('token')
     }
+  },
+  beforeMount() {
+    this.loadActivity()
+  },
+  computed: {
+    style() {
+      return { transform: 'rotateY(' + this.currdeg + 'deg)' }
+    },
   },
   watch: {
     '$store.state.user.token'(value) {
@@ -92,7 +107,25 @@ export default {
       }
     },
   },
+
   methods: {
+    async loadActivity() {
+      try {
+        const res = await fetch('http://localhost:4500/api/activity/getAll', {
+          method: 'GET',
+        })
+        const data = await res.json()
+        for (let i = 0; i < data.activity.length; i++) {
+          if (data.activity[i].title === config.proRaftingName) {
+            this.title = data.activity[i].title
+            localStorage.setItem('activityId', data.activity[i]._id)
+            localStorage.setItem('activityName', data.activity[i].title)
+          }
+        }
+      } catch (err) {
+        alert(err.message)
+      }
+    },
     onEscalada() {
       this.$router.push('/cursospro-escalada')
     },
@@ -104,6 +137,9 @@ export default {
     },
     onBarranquismo() {
       this.$router.push('/cursospro-barranquismo')
+    },
+    onForm() {
+      this.$router.push('/formulario-actividades')
     },
   },
 }

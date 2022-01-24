@@ -312,6 +312,9 @@ ol {
 .card-body {
   padding: 0;
 }
+.card-title{
+  margin-top: 10px;
+}
 
 .rlv-pointer {
   cursor: pointer;
@@ -339,7 +342,7 @@ ol {
     margin-bottom: 20px;
   }
 }
-.hover {
+.rlv-btn-rutas {
   position: relative;
   border: 2px solid white;
   width: 230px;
@@ -357,13 +360,13 @@ ol {
   font-size: 1.3rem;
   padding-top: 10px;
 }
-.button:hover .hover {
+.button:hover .rlv-btn-rutas {
   left: -145px;
 }
 .button:hover .clic {
   margin-left: 80px;
 }
-.sure {
+.rlv-sure {
   margin-top: 37px;
   margin-right: -135px;
   color: white;
@@ -822,3 +825,20 @@ ol {
   margin-top: 60%;
   margin-left: -20%;
 }
+
+
+/* ******custom page-formulario*********** */
+
+.rlv-form{
+  
+  padding: 30px;
+  border: 1px solid #001a31;
+  border-radius: 10px;
+
+  }
+
+  .rlv-form-title{
+    margin-top: 10%;
+    text-align: center;
+
+  }

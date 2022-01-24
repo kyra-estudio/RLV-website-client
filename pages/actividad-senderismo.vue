@@ -30,7 +30,7 @@
               </div>
             </b-col>
             <b-col cols="4">
-              <h1 class="rlv-title-cursos">Senderismo</h1>
+              <h1 class="rlv-title-cursos">{{title}}</h1>
               <p class="rlv-text-cursos">
                 Apuntarse a las actividades implica la aceptación de las
                 condiciones y normas de funcionamiento del club.
@@ -54,7 +54,7 @@
             ></b-img>
             <div class="rlv-btn-actividades-pst">
               <div class="rlv-btn-actividades" @click="onSignUp()" v-if="!token"></div>
-              <div class="rlv-btn-actividades-reg" @click="onSignUp()" v-if="token"></div>
+              <div class="rlv-btn-actividades-reg" @click="onForm()" v-if="token"></div>
             </div>
             
           </div>
@@ -64,16 +64,27 @@
   </div>
 </template>
 <script>
+import config from '~/config'
 export default {
   data() {
     return {
-      token: '',     
+      token: '',
+      currdeg: 0,
+      title: '',
     }
   },
   created() {
     if (process.client) {
       this.token = localStorage.getItem('token')
     }
+  },
+  beforeMount() {
+    this.loadActivity()
+  },
+  computed: {
+    style() {
+      return { transform: 'rotateY(' + this.currdeg + 'deg)' }
+    },
   },
   watch: {
     '$store.state.user.token'(value) {
@@ -82,7 +93,25 @@ export default {
       }
     },
   },
+
   methods: {
+    async loadActivity() {
+      try {
+        const res = await fetch('http://localhost:4500/api/activity/getAll', {
+          method: 'GET',
+        })
+        const data = await res.json()
+        for (let i = 0; i < data.activity.length; i++) {
+          if (data.activity[i].title === config.actividadSenderismoName) {
+            this.title = data.activity[i].title
+            localStorage.setItem('activityId', data.activity[i]._id)
+            localStorage.setItem('activityName', data.activity[i].title)
+          }
+        }
+      } catch (err) {
+        alert(err.message)
+      }
+    },
     onOrientacion() {
       this.$router.push('/actividad-orientacion')
     },
@@ -97,6 +126,9 @@ export default {
     },
     onSignUp() {
       this.$router.push('/sign-up')
+    },
+    onForm() {
+      this.$router.push('/formulario-actividades')
     },
   },
 }

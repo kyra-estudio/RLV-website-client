@@ -39,7 +39,7 @@
           </b-col>
           <b-col lg="2">
             <div class="rlv-btn-cursospro-pst">
-              <div class="rlv-btn-cursospro-reg" @click="onSignUp()"></div>
+              <div class="rlv-btn-cursospro-reg" @click="onForm()"></div>
             </div>
           </b-col>
           <b-col lg="5">
@@ -82,16 +82,27 @@
   </div>
 </template>
 <script>
+import config from '~/config'
 export default {
   data() {
     return {
       token: '',
+      currdeg: 0,
+      title: '',
     }
   },
   created() {
     if (process.client) {
       this.token = localStorage.getItem('token')
     }
+  },
+  beforeMount() {
+    this.loadActivity()
+  },
+  computed: {
+    style() {
+      return { transform: 'rotateY(' + this.currdeg + 'deg)' }
+    },
   },
   watch: {
     '$store.state.user.token'(value) {
@@ -100,8 +111,26 @@ export default {
       }
     },
   },
+
   methods: {
-    onEscalada() {
+    async loadActivity() {
+      try {
+        const res = await fetch('http://localhost:4500/api/activity/getAll', {
+          method: 'GET',
+        })
+        const data = await res.json()
+        for (let i = 0; i < data.activity.length; i++) {
+          if (data.activity[i].title === config.proEscaladaName) {
+            this.title = data.activity[i].title
+            localStorage.setItem('activityId', data.activity[i]._id)
+            localStorage.setItem('activityName', data.activity[i].title)
+          }
+        }
+      } catch (err) {
+        alert(err.message)
+      }
+    },
+     onEscalada() {
       this.$router.push('/cursospro-escalada')
     },
     onRafting() {
@@ -112,6 +141,9 @@ export default {
     },
     onBarranquismo() {
       this.$router.push('/cursospro-barranquismo')
+    },
+    onForm() {
+      this.$router.push('/formulario-actividades')
     },
   },
 }
