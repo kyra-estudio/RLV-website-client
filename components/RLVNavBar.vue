@@ -32,6 +32,12 @@
               v-if="noHome && token"
               >CursosPro</b-nav-item
             >
+            <b-nav-item
+              @click="isAdmin()"
+              class="RLV-navbar-item navbar-right"
+              v-if="noHome && token && admin ==='true'"
+              >Administración</b-nav-item
+            >
             <b-nav-item href="./sign-in" class="RLV-navbar-item" v-if="!token"
               >Ingresar</b-nav-item
             >
@@ -65,6 +71,7 @@ export default {
       token: '',
       avatar: undefined,
       name: '',
+      admin: '',
     }
   },
   mounted() {
@@ -72,6 +79,7 @@ export default {
       this.token = localStorage.getItem('token')
       this.avatar = localStorage.getItem('avatar')
       this.name = localStorage.getItem('name')
+      this.admin = localStorage.getItem('admin')
     }
   },
   watch: {
@@ -80,6 +88,7 @@ export default {
         this.token = localStorage.getItem('token')
         this.avatar = localStorage.getItem('avatar')
         this.name = localStorage.getItem('name')
+        this.admin = localStorage.getItem('admin')
       }
     },
   },
@@ -108,6 +117,9 @@ export default {
     },
     goCursosPro() {
       this.$router.push('/cursos-pro')
+    },
+    isAdmin() {
+      this.$router.push('/admin')
     },
   },
 }

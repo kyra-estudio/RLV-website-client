@@ -2,7 +2,7 @@
   <div class="rlv-orientacion">
     <div class="rlv-subnav">
       <b-nav>
-        <b-nav-item @click="onOrientacion()" class="rlv-subnav-item" 
+        <b-nav-item @click="onOrientacion()" class="rlv-subnav-item"
           >Curso Orientación</b-nav-item
         >
         <b-nav-item @click="onSenderismo()" class="rlv-subnav-item"
@@ -30,30 +30,38 @@
               </div>
             </b-col>
             <b-col cols="4">
-              <h1 class="rlv-title-cursos">{{title}}</h1>
+              <h1 class="rlv-title-cursos">{{ title }}</h1>
               <p class="rlv-text-cursos">
                 Apuntarse a las actividades implica la aceptación de las
                 condiciones y normas de funcionamiento del club.
               </p>
               <p class="rlv-text-cursos">
-                El Parque Nacional de los Picos de Europa es, probablemente el parque nacional más impresionante de España, o incluso de Europa y, sin lugar a duda, un imán para los montañistas.
-              </p>              
+                El Parque Nacional de los Picos de Europa es, probablemente el
+                parque nacional más impresionante de España, o incluso de Europa
+                y, sin lugar a duda, un imán para los montañistas.
+              </p>
             </b-col>
             <b-col cols="2"></b-col>
           </b-row>
         </b-col>
         <b-col cols="12" md="12" lg="6">
           <div class="img-actividades d-flex justify-content-center">
-            
             <b-img
               :src="require('../static/img/actividades/aventuras.png')"
               fluid
             ></b-img>
             <div class="rlv-btn-actividades-pst">
-              <div class="rlv-btn-actividades" @click="onSignUp()" v-if="!token"></div>
-              <div class="rlv-btn-actividades-reg" @click="onForm()" v-if="token"></div>
+              <div
+                class="rlv-btn-actividades"
+                @click="onSignUp()"
+                v-if="!token"
+              ></div>
+              <div
+                class="rlv-btn-actividades-reg"
+                @click="onForm()"
+                v-if="token"
+              ></div>
             </div>
-            
           </div>
         </b-col>
       </b-row>

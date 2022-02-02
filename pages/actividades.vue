@@ -96,7 +96,7 @@ export default {
       this.$router.push('/actividad-senderismo')
     },
     onAventuras() {
-      this.$router.push('actividad-aventuras')
+      this.$router.push('/actividad-aventuras')
     },
     onMicologia() {
       this.$router.push('/actividad-micologia')

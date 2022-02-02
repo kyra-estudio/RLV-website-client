@@ -842,3 +842,9 @@ ol {
     text-align: center;
 
   }
+
+  /* ******custom page-admin*********** */
+  .rlv-admin-row{
+    width: 966px;
+    height: 900px;
+  }
