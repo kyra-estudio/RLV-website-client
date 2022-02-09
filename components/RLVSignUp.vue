@@ -90,6 +90,7 @@
 </template>
 
 <script>
+import config from '~/config'
 export default {
   data() {
     return {
@@ -118,7 +119,8 @@ export default {
       formData.append('password', this.password)
       formData.append('password2', this.password2)
       try {
-        const res = await fetch('http://localhost:4500/api/user/signUp', {
+        const url = config.HOSTNAME + 'api/user/signUp'
+        const res = await fetch(url, {
           method: 'POST',
           body: formData,
         })

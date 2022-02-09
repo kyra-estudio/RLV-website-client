@@ -42,6 +42,7 @@
   </div>
 </template>
 <script>
+import config from '~/config'
 export default {
   data() {
     return {
@@ -52,12 +53,13 @@ export default {
   methods: {
     async onSubmit() {
       try {
+        const url = config.HOSTNAME + 'api/user/signIn'
         const body = JSON.stringify({
           email: this.email,
           password: this.password,
         })
 
-        const res = await fetch('http://localhost:4500/api/user/signIn', {
+        const res = await fetch(url, {
           method: 'post',
           headers: {
             'Content-Type': 'application/json',

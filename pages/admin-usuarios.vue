@@ -1,16 +1,17 @@
 <template>
   <div class="rlv-admin-usuarios">
-    <b-row align-v="center">
+    <b-row>
       <b-col cols="6" class="rlv-zindex d-none d-lg-block">
-        <div class="rlv-imagen-sign-up">
+        <div class="">
           <b-img
             :src="require('../static/img/admin/admin-portada.png')"
             fluid
           ></b-img>
         </div>
       </b-col>
-      <b-col cols="6"></b-col>
-      <RlVUser />
+      <b-col cols="12" md="12" lg="6">
+     <RLVUsuarios class="mt-4" />
+     </b-col>
     </b-row>
   </div>
 </template>
@@ -23,6 +24,7 @@ export default {
       name: '',
     }
   },
+
   //   created() {
   //     if (process.client) {
   //       this.token = localStorage.getItem('token')

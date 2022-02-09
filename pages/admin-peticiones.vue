@@ -9,7 +9,9 @@
           ></b-img>
         </div>
       </b-col>
-      <b-col cols="6"></b-col>
+      <b-col cols="12" md="12" lg="6">
+        <RLVPeticiones class="mt-4" />
+      </b-col>
       
     </b-row>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="rlv-ruta-cascadas">
-    <div class="rlv-subnav">
+    <div class="rlv-subnav d-none d-lg-block">
       <b-nav>
         <b-nav-item @click="onCarneros()" class="rlv-subnav-item"
           >Ruta de los carneros salvajes</b-nav-item
@@ -263,7 +263,8 @@ export default {
   methods: {
     async loadActivity() {
       try {
-        const res = await fetch('http://localhost:4500/api/activity/getAll', {
+        const url = config.HOSTNAME + 'api/activity/getAll'
+        const res = await fetch(url, {
           method: 'GET',
         })
         const data = await res.json()

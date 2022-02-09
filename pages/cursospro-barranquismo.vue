@@ -1,6 +1,6 @@
 <template>
   <div class="rlv-cpro-barranquismo">
-    <div class="rlv-subnav">
+    <div class="rlv-subnav d-none d-lg-block">
       <p hidden>{{title}}</p>
       <b-nav>
         <b-nav-item @click="onEscalada()" class="rlv-subnav-item"
@@ -105,7 +105,8 @@ export default {
   methods: {
     async loadActivity() {
       try {
-        const res = await fetch('http://localhost:4500/api/activity/getAll', {
+        const url = config.HOSTNAME + 'api/activity/getAll'
+        const res = await fetch(url, {
           method: 'GET',
         })
         const data = await res.json()

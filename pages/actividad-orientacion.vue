@@ -1,6 +1,6 @@
 <template>
   <div class="rlv-orientacion">
-    <div class="rlv-subnav">
+    <div class="rlv-subnav d-none d-lg-block">
       <b-nav>
         <b-nav-item @click="onOrientacion()" class="rlv-subnav-item" active
           >Curso Orientación</b-nav-item
@@ -20,8 +20,8 @@
       <b-row>
         <b-col cols="12" md="12" lg="6">
           <b-row>
-            <b-col cols="3"></b-col>
-            <b-col cols="3">
+            <b-col cols="3" class="d-none d-lg-block"></b-col>
+            <b-col cols="4" md="4" lg="3">
               <div class="img-actividades text-right">
                 <b-img
                   :src="require('../static/img/iconos/i-orientacion.png')"
@@ -29,7 +29,7 @@
                 ></b-img>
               </div>
             </b-col>
-            <b-col cols="4">
+            <b-col cols="8" md="8" lg="4">
               <h1 class="rlv-title-cursos">{{title}}</h1>
               <p class="rlv-text-cursos">
                 Apuntarse a las actividades implica la aceptación de las
@@ -45,7 +45,7 @@
                 innovadoras del sector del outdoor.
               </p>
             </b-col>
-            <b-col cols="2"></b-col>
+            <b-col cols="2" class="d-none d-lg-block"></b-col>
           </b-row>
         </b-col>
         <b-col cols="12" md="12" lg="6">
@@ -100,7 +100,8 @@ export default {
   methods: {
     async loadActivity() {
       try {
-        const res = await fetch('http://localhost:4500/api/activity/getAll', {
+        const url = config.HOSTNAME + 'api/activity/getAll'
+        const res = await fetch(url, {
           method: 'GET',
         })
         const data = await res.json()

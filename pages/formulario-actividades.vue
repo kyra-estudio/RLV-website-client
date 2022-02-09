@@ -146,6 +146,7 @@
 </template>
 
 <script>
+import config from '~/config'
 export default {
   data() {
     return {
@@ -173,6 +174,7 @@ export default {
 
     async onSubmit() {
       try {
+        const url = config.HOSTNAME + 'api/information/createPetition'
         const body = JSON.stringify({
           activityId: this.activityId,
           userId: this.userId,
@@ -183,7 +185,7 @@ export default {
           comment: this.comment,
         })
         const res = await fetch(
-          'http://localhost:4500/api/information/createPetition',
+          url,
           {
             method: 'post',
             headers: {

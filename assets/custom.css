@@ -3,7 +3,7 @@
   font-family: 'Gill Sans', sans-serif;
   /* background-color: coral; */
 }
-h4{
+h4 {
   font-weight: 900;
 }
 
@@ -77,7 +77,7 @@ h4{
 }
 @media (max-width: 991px) {
   .RLV-navbar-item {
-    padding-left: 1rem !important;
+    padding-left: 0.3rem !important;
   }
 }
 @media (max-width: 767px) {
@@ -312,7 +312,7 @@ ol {
 .card-body {
   padding: 0;
 }
-.card-title{
+.card-title {
   margin-top: 10px;
 }
 
@@ -320,8 +320,19 @@ ol {
   cursor: pointer;
 }
 .rlv-ruta-detalle {
-  margin-top: 4%;
+  margin-top: 2%;
 }
+@media (max-width: 991px) {
+  .rlv-ruta-detalle {
+    margin-top: 6%;
+  }
+}
+@media (max-width: 767px) {
+  .rlv-ruta-detalle {
+    margin-top: 4%;
+  }
+}
+
 /**** boton detalles ***/
 .button {
   margin: 0 auto;
@@ -442,6 +453,11 @@ ol {
     margin-top: 50px;
   }
 }
+@media (max-width: 767px) {
+  .rlv-carrusel_3d {
+    display: none;
+  }
+}
 
 .container_3d {
   margin: 0 auto;
@@ -485,7 +501,6 @@ ol {
     width: 250px;
     height: 200px;
     line-height: 200px;
-    
   }
 }
 
@@ -555,62 +570,65 @@ ol {
 /* } */
 .next {
   right: 15em;
- 
 }
 .prev {
   left: 15em;
- ;
 }
 @media (max-width: 1599px) {
   .next {
     right: 5em;
-    margin-top: 150px
+    margin-top: 150px;
   }
   .prev {
     left: 5em;
-    margin-top: 150px
+    margin-top: 150px;
   }
 }
 @media (max-width: 991px) {
   .next {
     right: 0em;
-    margin-top: 60px
+    margin-top: 60px;
   }
   .prev {
     left: 0em;
-    margin-top: 60px
+    margin-top: 60px;
   }
 }
 /***actividades***********/
 
-.rlv-actividades-container{
-  background-image:  url("./static/img/logo/logo-agua.png");
+.rlv-actividades-container {
+  background-image: url('./static/img/logo/logo-agua.png');
   background-repeat: no-repeat;
 }
-.rlv-actividades-btn:hover{
+.rlv-actividades-btn:hover {
   cursor: pointer;
 }
 
-.rlv-title-cursos{
+.rlv-title-cursos {
   font-family: 'Amalfi Coast', sans-serif;
   font-size: 35px;
   margin-top: 50px;
 }
-.rlv-text-cursos{
+.rlv-text-cursos {
   font-size: 20px;
 }
-.rlv-cursos-container{
-  background-image:  url("./static/img/logo/logo-marca-cursos.png");
+@media (max-width: 767px) {
+  .rlv-text-cursos {
+    font-size: 14px;
+  }
+}
+.rlv-cursos-container {
+  background-image: url('./static/img/logo/logo-marca-cursos.png');
   background-repeat: no-repeat;
 }
-.img-actividades{
+.img-actividades {
   position: relative;
 }
-.rlv-btn-actividades-pst{
+.rlv-btn-actividades-pst {
   position: absolute;
   margin-top: 231px;
 }
-.rlv-btn-actividades{
+.rlv-btn-actividades {
   /* padding: 7rem 7rem; */
   background: #001a31;
   cursor: pointer;
@@ -620,8 +638,9 @@ ol {
   width: 235px;
   height: 235px;
 }
-.rlv-btn-actividades::before{
-  content: "Plazas libres";
+
+.rlv-btn-actividades::before {
+  content: 'Plazas libres';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -630,11 +649,11 @@ ol {
   color: white;
   /* font-weight: 700;
   text-shadow: .1rem .1rem .1rem #333; */
-  transition: .5s ease;
-  font-family: 'Amalfi Coast', sans-serif ;
+  transition: 0.5s ease;
+  font-family: 'Amalfi Coast', sans-serif;
 }
-.rlv-btn-actividades::after{
-  content: "Regístrate";
+.rlv-btn-actividades::after {
+  content: 'Regístrate';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -643,23 +662,23 @@ ol {
   color: white;
   /* font-weight: 700;
   text-shadow: .1rem .1rem .1rem #333; */
-  transition: .5s ease;
+  transition: 0.5s ease;
   font-family: 'Amalfi Coast', sans-serif;
-  opacity:0;
+  opacity: 0;
 }
-.rlv-btn-actividades:hover::before{
-  transform:  translate(-200%, -200%) scale(2);
+.rlv-btn-actividades:hover::before {
+  transform: translate(-200%, -200%) scale(2);
   opacity: 1;
 }
-.rlv-btn-actividades:hover::after{
-  transform:  translate(-50%, -50%) scale(1);
+.rlv-btn-actividades:hover::after {
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
-.rlv-btn-actividades-reg-pst{
+.rlv-btn-actividades-reg-pst {
   position: absolute;
   margin-top: 231px;
 }
-.rlv-btn-actividades-reg{
+.rlv-btn-actividades-reg {
   /* padding: 7rem 7rem; */
   background: #001a31;
   cursor: pointer;
@@ -669,8 +688,15 @@ ol {
   width: 235px;
   height: 235px;
 }
-.rlv-btn-actividades-reg::before{
-  content: "Plazas libres";
+@media (max-width: 767px) {
+  .rlv-btn-actividades-reg {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+.rlv-btn-actividades-reg::before {
+  content: 'Plazas libres';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -679,11 +705,17 @@ ol {
   color: white;
   /* font-weight: 700;
   text-shadow: .1rem .1rem .1rem #333; */
-  transition: .5s ease;
-  font-family: 'Amalfi Coast', sans-serif ;
+  transition: 0.5s ease;
+  font-family: 'Amalfi Coast', sans-serif;
 }
-.rlv-btn-actividades-reg::after{
-  content: "+ Info";
+@media (max-width: 767px) {
+  .rlv-btn-actividades-reg::before {
+    width: 125px;
+    height: 125px;
+  }
+}
+.rlv-btn-actividades-reg::after {
+  content: '+ Info';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -692,77 +724,73 @@ ol {
   color: white;
   /* font-weight: 700;
   text-shadow: .1rem .1rem .1rem #333; */
-  transition: .5s ease;
+  transition: 0.5s ease;
   font-family: 'Amalfi Coast', sans-serif;
-  opacity:0;
+  opacity: 0;
 }
-.rlv-btn-actividades-reg:hover::before{
-  transform:  translate(-200%, -200%) scale(2);
+.rlv-btn-actividades-reg:hover::before {
+  transform: translate(-200%, -200%) scale(2);
   opacity: 1;
 }
-.rlv-btn-actividades-reg:hover::after{
-  transform:  translate(-50%, -50%) scale(1);
+.rlv-btn-actividades-reg:hover::after {
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
 /* ******custom page-cursosPRO*********** */
 
-.rlv-cursospro-titulo{
+.rlv-cursospro-titulo {
   margin-top: -4.5%;
   margin-left: 17%;
 }
-.rlv-cursospro-text{
+.rlv-cursospro-text {
   margin-left: 25%;
-    margin-top: -5%;
-    margin-right: 10%;
-    font-size: 28px;    
+  margin-top: -5%;
+  margin-right: 10%;
+  font-size: 28px;
 }
 
-.rlv-cursospro-iconos{
+.rlv-cursospro-iconos {
   position: relative;
   width: 385px;
   height: 385px;
   margin-top: 5%;
-  
 }
-.rlv-cursospro-i-escalada{
+.rlv-cursospro-i-escalada {
   position: absolute;
   cursor: pointer;
 }
-.rlv-cursospro-i-rafting{
+.rlv-cursospro-i-rafting {
   position: absolute;
   margin-left: 52%;
   cursor: pointer;
 }
-.rlv-cursospro-separador{
+.rlv-cursospro-separador {
   position: absolute;
   z-index: -1;
 }
-.rlv-cursospro-i-parapente{
+.rlv-cursospro-i-parapente {
   position: absolute;
   margin-top: 52%;
   cursor: pointer;
 }
-.rlv-cursospro-i-barranquismo{
+.rlv-cursospro-i-barranquismo {
   position: absolute;
   margin-left: 52%;
   margin-top: 52%;
   cursor: pointer;
 }
 
-.rlv-escalada-titulo{
- 
+.rlv-escalada-titulo {
   margin-left: 17%;
 }
-.rlv-escalada-text{
- margin-top:5%;
-    font-size: 22px;    
+.rlv-escalada-text {
+  margin-top: 5%;
+  font-size: 22px;
 }
-.rlv-btn-cursospro-reg-pst{
+.rlv-btn-cursospro-reg-pst {
   position: absolute;
- 
-  ;
 }
-.rlv-btn-cursospro-reg{
+.rlv-btn-cursospro-reg {
   /* padding: 7rem 7rem; */
   background: #001a31;
   border: 5px solid white;
@@ -775,8 +803,8 @@ ol {
   margin-top: -40%;
 }
 
-.rlv-btn-cursospro-reg::before{
-  content: "Plazas libres";
+.rlv-btn-cursospro-reg::before {
+  content: 'Plazas libres';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -785,11 +813,11 @@ ol {
   color: white;
   /* font-weight: 700;
   text-shadow: .1rem .1rem .1rem #333; */
-  transition: .5s ease;
-  font-family: 'Amalfi Coast', sans-serif ;
+  transition: 0.5s ease;
+  font-family: 'Amalfi Coast', sans-serif;
 }
-.rlv-btn-cursospro-reg::after{
-  content: "+ Info";
+.rlv-btn-cursospro-reg::after {
+  content: '+ Info';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -798,53 +826,64 @@ ol {
   color: white;
   /* font-weight: 700;
   text-shadow: .1rem .1rem .1rem #333; */
-  transition: .5s ease;
+  transition: 0.5s ease;
   font-family: 'Amalfi Coast', sans-serif;
-  opacity:0;
+  opacity: 0;
 }
-.rlv-btn-cursospro-reg:hover::before{
-  transform:  translate(-200%, -200%) scale(2);
+.rlv-btn-cursospro-reg:hover::before {
+  transform: translate(-200%, -200%) scale(2);
   opacity: 1;
 }
-.rlv-btn-cursospro-reg:hover::after{
-  transform:  translate(-50%, -50%) scale(1);
+.rlv-btn-cursospro-reg:hover::after {
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
-.rlv-escalda-imgright{
+.rlv-escalda-imgright {
   position: relative;
 }
 
-.rlv-escalada-escalada2{
-  
+.rlv-escalada-escalada2 {
   margin-top: 15%;
   text-align: right;
 }
 
-.rlv-escalada-escalada3{
+.rlv-escalada-escalada3 {
   /* position: absolute; */
   margin-top: 60%;
   margin-left: -20%;
 }
 
-
 /* ******custom page-formulario*********** */
 
-.rlv-form{
-  
+.rlv-form {
   padding: 30px;
   border: 1px solid #001a31;
   border-radius: 10px;
+}
 
+.rlv-form-title {
+  margin-top: 10%;
+  text-align: center;
+}
+
+/* ******custom page-admin*********** */
+.rlv-admin-row {
+  width: 966px;
+  height: 900px;
+}
+.card-header {
+  background: #001a31;
+  color: white;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 991px) {
+  .rlv-admin-peticiones {
+    margin-top: 4%;
   }
-
-  .rlv-form-title{
-    margin-top: 10%;
-    text-align: center;
-
+}
+@media (max-width: 991px) {
+  .rlv-admin-usuarios {
+    margin-top: 4%;
   }
-
-  /* ******custom page-admin*********** */
-  .rlv-admin-row{
-    width: 966px;
-    height: 900px;
-  }
+}

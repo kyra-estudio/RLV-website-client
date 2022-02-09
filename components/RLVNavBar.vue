@@ -35,7 +35,7 @@
             <b-nav-item
               @click="isAdmin()"
               class="RLV-navbar-item navbar-right"
-              v-if="noHome && token && admin ==='true'"
+              v-if="noHome && token && admin === 'true'"
               >Administración</b-nav-item
             >
             <b-nav-item href="./sign-in" class="RLV-navbar-item" v-if="!token"
@@ -46,20 +46,20 @@
             >
           </b-navbar-nav>
         </b-collapse>
+        <b-nav-item-dropdown
+          id="rlv-avatar"
+          class="navbar-right rlv-avatar"
+          toggle-class="nav-link-custom"
+          right
+          v-if="token"
+        >
+          <template #button-content>
+            <span class="mr-auto">Hola {{ name }} </span>
+            <b-avatar :src="avatar" size="55px"></b-avatar>
+          </template>
+          <b-dropdown-item @click="logout()">Logout</b-dropdown-item>
+        </b-nav-item-dropdown>
       </b-container>
-      <b-nav-item-dropdown
-        id="rlv-avatar"
-        class="navbar-right rlv-avatar"
-        toggle-class="nav-link-custom"
-        right
-        v-if="token"
-      >
-        <template #button-content>
-          <span class="mr-auto">Hola {{ name }} </span>
-          <b-avatar :src="avatar" size="55px"></b-avatar>
-        </template>
-        <b-dropdown-item @click="logout()">Logout</b-dropdown-item>
-      </b-nav-item-dropdown>
     </b-navbar>
   </div>
 </template>
