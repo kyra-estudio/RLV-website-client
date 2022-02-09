@@ -12,7 +12,7 @@
         <b-col cols="12" md="12" lg="6">
           <div class="img-actividades d-flex justify-content-center">
             <b-img
-              :src="require('../static/img/actividades/actividades.png')"
+              :src="require('../static/img/actividades/actividades.jpg')"
               fluid
             ></b-img>
           </div>

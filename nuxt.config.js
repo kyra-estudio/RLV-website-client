@@ -15,10 +15,10 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'http://fonts.cdnfonts.com/css/gill-sans' }
+      { rel: 'stylesheet', href: 'https://fonts.cdnfonts.com/css/gill-sans' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'http://fonts.cdnfonts.com/css/amalfi-coast' }
+      { rel: 'stylesheet', href: 'https://fonts.cdnfonts.com/css/amalfi-coast' }
     ],
   },
 

@@ -1,5 +1,5 @@
 export default{
-    HOSTNAME: "http://localhost:4500/",
+    HOSTNAME: "https://relivewebapi.azurewebsites.net/",
     rutaCarnerosName: "Ruta de los Carneros Salvajes",
     rutaCascadasName: "Ruta entre cascadas y saltos de agua",
     rutaFamiliaName: "Ruta con todos los miembros de la familia",
